@@ -1,6 +1,6 @@
 ---
 name: maintainable-project-guide
-description: Generate project-specific CLAUDE.md and AGENTS.md that prioritize long-term maintainability, clear state management, branch discipline, and test-first refactoring.
+description: 'Generate or update project-specific .claude/CLAUDE.md and .hermes/AGENTS.md maintainability guides; use for Japanese requests such as "CLAUDE.md と AGENTS.md を生成して" or "保守性重視のエージェント向けガイドを作って".'
 ---
 
 Use this skill when the user wants to create or update agent-facing project guides for a project where long-term maintainability matters more than short-term velocity.
@@ -39,10 +39,10 @@ If the user only says "make this reusable" or "create a guide", ask for the proj
 4. **Decision criteria** — how to choose between feature work and refactoring
 5. **Tech stack** — versions and key libraries
 6. **File structure** — directory layout and responsibilities
-7. **Architecture patterns** — concrete patterns with examples (e.g., MapLibre, state slices)
+7. **Architecture patterns** — concrete patterns with project-specific examples
 8. **State management policy** — SSOT, library choice, where state lives
 9. **Development rules** — issue/branch rules, commit conventions, PR rules, lint/build/test checklist
-10. **Security/caution notes** — what not to automate (e.g., `.env.local` copying)
+10. **Security/caution notes** — what not to automate, such as project-specific secret or environment handling
 
 ## Required sections in `.hermes/AGENTS.md`
 
@@ -63,30 +63,30 @@ Before generating, collect or infer these values:
 
 | Variable | Example | Used in |
 |---|---|---|
-| `{PROJECT_NAME}` | GPX Route Editor | both |
-| `{PROJECT_DESCRIPTION}` | Edit GPX routes in the browser | both |
-| `{TECH_STACK}` | React 19 + TypeScript + Vite 7 | both |
-| `{STATE_LIBRARY}` | Zustand 5 | both |
-| `{STATE_LOCATION}` | `src/stores/` | both |
-| `{KEY_PATTERNS}` | MapLibre direct-API layers, undo/redo, selection | CLAUDE.md |
-| `{TEST_FRAMEWORKS}` | vitest, @testing-library/react, Playwright | AGENTS.md |
-| `{BUILD_COMMAND}` | `npm run build` | both |
-| `{LINT_COMMAND}` | `npm run lint` | both |
-| `{TEST_COMMAND}` | `npm test` | both |
-| `{E2E_COMMAND}` | `npm run test:e2e` | AGENTS.md |
+| `{PROJECT_NAME}` | `{EXAMPLE_PROJECT_NAME}` | both |
+| `{PROJECT_DESCRIPTION}` | `{EXAMPLE_PROJECT_DESCRIPTION}` | both |
+| `{TECH_STACK}` | `{EXAMPLE_TECH_STACK}` | both |
+| `{STATE_LIBRARY}` | `{EXAMPLE_STATE_LIBRARY}` | both |
+| `{STATE_LOCATION}` | `{EXAMPLE_STATE_LOCATION}` | both |
+| `{KEY_PATTERNS}` | `{EXAMPLE_KEY_PATTERNS}` | CLAUDE.md |
+| `{TEST_FRAMEWORKS}` | `{EXAMPLE_TEST_FRAMEWORKS}` | AGENTS.md |
+| `{BUILD_COMMAND}` | `{EXAMPLE_BUILD_COMMAND}` | both |
+| `{LINT_COMMAND}` | `{EXAMPLE_LINT_COMMAND}` | both |
+| `{TEST_COMMAND}` | `{EXAMPLE_TEST_COMMAND}` | both |
+| `{E2E_COMMAND}` | `{EXAMPLE_E2E_COMMAND}` | AGENTS.md |
 | `{BRANCH_PATTERN}` | `feature/{issue}-{summary}` or `chore/{summary}` | both |
 | `{COMMIT_LANGUAGE}` | Japanese | both |
 | `{PR_LANGUAGE}` | Japanese | both |
-| `{WORKTREE_NOTE}` | whether `.env.local` must be copied manually | CLAUDE.md |
-| `{RISKS}` | duplicated state, god components, untested hooks | AGENTS.md |
+| `{WORKTREE_NOTE}` | `{EXAMPLE_WORKTREE_NOTE}` | CLAUDE.md |
+| `{RISKS}` | `{EXAMPLE_RISKS}` | AGENTS.md |
 
 ## Customization rules
 
-- Remove project-specific examples (e.g., GPX, map tiles, route editing) and replace them with `{EXAMPLE}` placeholders.
+- Replace every `{EXAMPLE_*}` placeholder with project-specific examples before writing the generated files.
 - Keep the structure and rules intact; only the examples and tech details should change per project.
 - Make sure CLAUDE.md explains **why** each rule exists, while AGENTS.md states the rule **as a rule**.
 - Keep AGENTS.md stricter and shorter. CLAUDE.md can be more explanatory.
-- Always include a note that `AGENTS.md` is derived from `CLAUDE.md` and that `refactor-instructions.md` (or equivalent) takes precedence if conflicts arise.
+- Always include a note that `AGENTS.md` is derived from `CLAUDE.md` and that any project-specific higher-priority instruction file, such as `refactor-instructions.md`, takes precedence if conflicts arise.
 
 ## Output behavior
 
