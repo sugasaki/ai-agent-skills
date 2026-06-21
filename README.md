@@ -7,6 +7,7 @@ PC 間で共有する Claude Code 用スキルリポジトリ。
 | スキル名 | 説明 |
 |---|---|
 | `maintainable-project-guide` | 長期的な保守性を最優先にしたプロジェクトのための `.claude/CLAUDE.md` / `.hermes/AGENTS.md` 生成ガイド |
+| `gh-review-signature` | GitHub PR review / comment 投稿時のレビュアー署名ルール |
 
 ## セットアップ
 
