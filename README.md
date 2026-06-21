@@ -14,12 +14,14 @@ PC 間で共有する AI エージェント用スキルリポジトリ。Claude 
 
 ```bash
 # 1. このリポジトリをclone
-git clone git@github.com:YOUR_GITHUB_ACCOUNT/ai-agent-skills.git ~/.ai-agent-skills
+git clone https://github.com/sugasaki/ai-agent-skills.git ~/.ai-agent-skills
 
 # 2. Claude Code の personal skills ディレクトリにシンボリックリンクを作成
 mkdir -p ~/.claude/skills
 ln -s ~/.ai-agent-skills/maintainable-project-guide ~/.claude/skills/maintainable-project-guide
 ```
+
+自分の fork で管理する場合は、clone URL の `sugasaki` を fork owner に置き換えてください。
 
 ## 使い方
 
@@ -38,7 +40,8 @@ cd ~/.ai-agent-skills
 git pull
 ```
 
-Claude Code はスキルディレクトリの変更を検知するため、別途再起動は不要です。
+既に Claude Code が skills ディレクトリを認識している環境では、更新後の別途再起動は不要です。
+初回セットアップで `~/.claude/skills` を新しく作成した場合は、必要に応じて Claude Code を再起動してください。
 
 ## 新規スキルを追加する場合
 
