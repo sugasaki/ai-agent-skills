@@ -14,7 +14,7 @@ PC 間で共有する AI エージェント用スキルリポジトリ。Claude 
 
 ```bash
 # 1. このリポジトリをclone
-git clone git@github.com:sugasaki/ai-agent-skills.git ~/.ai-agent-skills
+git clone https://github.com/sugasaki/ai-agent-skills.git ~/.ai-agent-skills
 
 # 2. Claude Code の personal skills ディレクトリにシンボリックリンクを作成
 mkdir -p ~/.claude/skills

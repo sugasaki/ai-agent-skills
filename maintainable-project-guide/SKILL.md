@@ -63,10 +63,10 @@ Before generating, collect or infer these values:
 
 | Variable | Example | Used in |
 |---|---|---|
-| `{PROJECT_NAME}` | `{EXAMPLE_PROJECT_NAME}` | both |
+| `{PROJECT_NAME}` | Todo App | both |
 | `{PROJECT_DESCRIPTION}` | `{EXAMPLE_PROJECT_DESCRIPTION}` | both |
-| `{TECH_STACK}` | `{EXAMPLE_TECH_STACK}` | both |
-| `{STATE_LIBRARY}` | `{EXAMPLE_STATE_LIBRARY}` | both |
+| `{TECH_STACK}` | React + TypeScript + Vite | both |
+| `{STATE_LIBRARY}` | Zustand | both |
 | `{STATE_LOCATION}` | `{EXAMPLE_STATE_LOCATION}` | both |
 | `{KEY_PATTERNS}` | `{EXAMPLE_KEY_PATTERNS}` | CLAUDE.md |
 | `{TEST_FRAMEWORKS}` | `{EXAMPLE_TEST_FRAMEWORKS}` | AGENTS.md |
