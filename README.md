@@ -1,6 +1,6 @@
-# Claude Skills
+# AI Agent Skills
 
-PC 間で共有する Claude Code 用スキルリポジトリ。
+PC 間で共有する AI エージェント用スキルリポジトリ。Claude Code を中心に、`AGENTS.md` 規約に対応した各種 AI エージェントで再利用できるスキル/ガイドを集約する。
 
 ## 含まれるスキル
 
@@ -14,11 +14,11 @@ PC 間で共有する Claude Code 用スキルリポジトリ。
 
 ```bash
 # 1. このリポジトリをclone
-git clone git@github.com:sugasaki/claude-skills.git ~/.claude-skills
+git clone git@github.com:sugasaki/ai-agent-skills.git ~/.ai-agent-skills
 
 # 2. Claude Code の personal skills ディレクトリにシンボリックリンクを作成
 mkdir -p ~/.claude/skills
-ln -s ~/.claude-skills/maintainable-project-guide ~/.claude/skills/maintainable-project-guide
+ln -s ~/.ai-agent-skills/maintainable-project-guide ~/.claude/skills/maintainable-project-guide
 ```
 
 自分の fork で管理する場合は、clone URL の `sugasaki` を fork owner に置き換えてください。
@@ -36,7 +36,7 @@ Claude Code 上で以下のように呼び出します。
 ## 更新方法
 
 ```bash
-cd ~/.claude-skills
+cd ~/.ai-agent-skills
 git pull
 ```
 
@@ -45,6 +45,6 @@ git pull
 
 ## 新規スキルを追加する場合
 
-1. `~/.claude-skills/{skill-name}/SKILL.md` を作成
+1. `~/.ai-agent-skills/{skill-name}/SKILL.md` を作成
 2. 同様に `~/.claude/skills/{skill-name}` へシンボリックリンクを作成
 3. commit / push
